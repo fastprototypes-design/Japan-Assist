@@ -1,25 +1,15 @@
-# Archivos sensibles
-*.txt
-*.env
+﻿# Archivos sensibles
+secrets.txt
+credentials.txt
+*japan assist*.txt
+.env
 *.json
-secrets.*
-credentials.*
 
-# Archivos temporales y del sistema
+# Evitar carpetas
 __pycache__/
-*.pyc
-*.log
-*.tmp
-.DS_Store
-Thumbs.db
-
-# Entornos virtuales
 venv/
-env/
-.venv/
 .env/
 
-# Editor backups
-*.swp
-*.swo
-*~
+# Archivos del sistema
+.DS_Store
+Thumbs.db
