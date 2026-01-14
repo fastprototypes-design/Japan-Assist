@@ -1,0 +1,25 @@
+# Archivos sensibles
+*.txt
+*.env
+*.json
+secrets.*
+credentials.*
+
+# Archivos temporales y del sistema
+__pycache__/
+*.pyc
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+.env/
+
+# Editor backups
+*.swp
+*.swo
+*~

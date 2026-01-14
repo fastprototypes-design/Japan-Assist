@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Assist – Traductor Japonés Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="theme-toggle" id="themeToggle">
+        <span class="icon">🌙</span>
+    </div>
+    
+    <div class="container">
+        <h1>Japan Assist – Traductor Japonés Profesional</h1>
+        
+        <select id="langSelector">
+            <option value="es-ja">Español → Japonés</option>
+            <option value="ja-es">Japonés → Español</option>
+            <option value="es-ja-hiragana">Español → Hiragana</option>
+            <option value="es-ja-katakana">Español → Katakana</option>
+        </select>
+        
+        <div class="input-group">
+            <textarea id="userInput" placeholder="Escribe el texto que quieres traducir..."></textarea>
+            <button id="sendBtn">
+                <span class="icon">✉️</span>
+                <span>Traducir</span>
+            </button>
+        </div>
+        
+        <div class="loading" id="loadingIndicator">
+            <div class="loading-spinner"></div>
+            Procesando traducción...
+        </div>
+        
+        <div class="response-box" id="responseBox">
+            <div class="response-header">
+                <div class="response-title">
+                    <span class="icon">📄</span>
+                    <span>Traducción</span>
+                </div>
+                <div class="response-actions">
+                    <button class="action-btn" id="copyBtn" title="Copiar">
+                        <span class="icon">📋</span>
+                    </button>
+                    <button class="action-btn" id="speakBtn" title="Escuchar">
+                        <span class="icon">🔊</span>
+                    </button>
+                </div>
+            </div>
+            <div id="response"></div>
+        </div>
+        
+        <audio id="audioPlayer" controls style="display: none;"></audio>
+        
+        <button id="lineBtn">
+            <span class="icon">💬</span>
+            <span>Compartir en LINE</span>
+        </button>
+        
+        <div class="japanese-decoration">
+            日本語の美しさを体験してください
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
