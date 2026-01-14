@@ -31,7 +31,7 @@ RECOMMENDATIONS_PATH = BASE_DIR / "recommendations.json"
 
 recommendations = {}
 try:
-    with open(RECOMMENDATIONS  Path, "r", encoding="utf-8") as f:
+    with open(RECOMMENDATIONS_PATH, "r", encoding="utf-8") as f:
         recommendations = json.load(f)
 except Exception as e:
     print(f"Error loading recommendations.json: {e}")
