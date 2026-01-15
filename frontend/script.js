@@ -1,4 +1,4 @@
-// Elementos del DOM
+﻿// Elementos del DOM
 const userInput = document.getElementById('userInput');
 const sendBtn = document.getElementById('sendBtn');
 const responseArea = document.getElementById('response');
@@ -59,7 +59,7 @@ async function handleTranslation() {
 
         // Reproducir audio si existe
         if (data.audio_base64) {
-            const audioUrl = `data:audio/mpeg;base64,${data.audio_base64}`;
+            const audioUrl = `audio/mpeg;base64,${data.audio_base64}`;
             audioPlayer.src = audioUrl;
             audioPlayer.style.display = 'block';
             audioPlayer.play().catch(e => console.warn("Audio play failed:", e));
