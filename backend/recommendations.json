@@ -1,0 +1,104 @@
+{
+  "restaurants": [
+    {
+      "id": "pangea",
+      "name": {
+        "ja": "パンゲア",
+        "en": "Pangea",
+        "es": "Pangea"
+      },
+      "description": {
+        "ja": "高級国際料理、静かな雰囲気、辛くない選択可。",
+        "en": "Premium international cuisine, quiet atmosphere, non-spicy options available.",
+        "es": "Cocina internacional premium, ambiente tranquilo, opciones sin picante."
+      },
+      "location": "Av. Morones Prieto 2300, Valle Oriente"
+    },
+    {
+      "id": "suntory",
+      "name": {
+        "ja": "サントリー",
+        "en": "Suntory",
+        "es": "Suntory"
+      },
+      "description": {
+        "ja": "日本食レストラン、本格的な寿司と静かな個室あり。",
+        "en": "Japanese restaurant with authentic sushi and quiet private rooms.",
+        "es": "Restaurante japonés con sushi auténtico y salas privadas tranquilas."
+      },
+      "location": "Calle Mina 507, Centro"
+    }
+  ],
+  "hospitals": [
+    {
+      "name": {
+        "ja": "テクサルード病院",
+        "en": "TecSalud Hospital",
+        "es": "Hospital San José - TecSalud"
+      },
+      "phone": "+52 81 8399 9999",
+      "english": true,
+      "international_insurance": true
+    },
+    {
+      "name": {
+        "ja": "クリスタレス病院",
+        "en": "Hospital Christus Muguerza",
+        "es": "Hospital Christus Muguerza"
+      },
+      "phone": "+52 81 8399 3000",
+      "english": true,
+      "international_insurance": true
+    }
+  ],
+  "attractions": [
+    {
+      "name": {
+        "ja": "モンテレー都市圏博物館",
+        "en": "MARCO – Museum of Contemporary Art",
+        "es": "Museo de Arte Contemporáneo de Monterrey"
+      },
+      "description": {
+        "ja": "現代美術の静かな空間。日本語パンフレットあり。",
+        "en": "Quiet space for contemporary art. Japanese brochures available.",
+        "es": "Espacio tranquilo de arte contemporáneo. Folletos en japonés disponibles."
+      },
+      "location": "Dr. José Ma. Coss 445, Centro"
+    },
+    {
+      "name": {
+        "ja": "ガルサ・ガルシア公園",
+        "en": "Parque Fundidora",
+        "es": "Parque Fundidora"
+      },
+      "description": {
+        "ja": "広い緑地、静かな散歩道、日本庭園風エリアあり。",
+        "en": "Large green park with quiet walking paths and a Japanese garden-style area.",
+        "es": "Parque verde amplio con caminos tranquilos y área con estilo de jardín japonés."
+      },
+      "location": "Av. Fundidora y Adolfo Prieto, Obrera"
+    },
+    {
+      "name": {
+        "ja": "モンテレー水族館",
+        "en": "Acuario del Río Bravo",
+        "es": "Acuario del Río Bravo"
+      },
+      "description": {
+        "ja": "家族向け、静かな環境、日本語音声ガイドあり。",
+        "en": "Family-friendly, calm environment, audio guide available in Japanese.",
+        "es": "Ideal para familias, ambiente tranquilo, guía de audio en japonés disponible."
+      },
+      "location": "Av. Fundidora 2500, Obrera"
+    }
+  ],
+  "emergency": {
+    "consulate": {
+      "ja": "在モンテレイ日本国領事館",
+      "en": "Japanese Consulate in Monterrey",
+      "es": "Consulado de Japón en Monterrey"
+    },
+    "phone": "+52 81 XXXX XXXX",
+    "police": "911"
+  }
+}
