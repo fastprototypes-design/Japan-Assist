@@ -11,7 +11,7 @@ from pathlib import Path
 
 app = FastAPI()
 
-# Middleware CORS
+# Middleware CORS (debe ir inmediatamente después de app = FastAPI())
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -45,6 +45,11 @@ try:
         recommendations = json.load(f)
 except Exception as e:
     print(f"Error loading recommendations.json: {e}")
+
+# Ruta raíz (opcional, evita 404 en /)
+@app.get("/")
+async def root():
+    return {"message": "Japan Assist API is live!"}
 
 class ChatRequest(BaseModel):
     text: str
