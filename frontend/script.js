@@ -41,6 +41,10 @@ async function handleTranslation() {
     responseArea.textContent = '';
 
     try {
+        // 🔍 Depuración: muestra la solicitud en la consola
+        console.log("Enviando solicitud a:", 'https://japan-assist.onrender.com/chat');
+        console.log("Datos:", { text, lang });
+
         const response = await fetch('https://japan-assist.onrender.com/chat', {
             method: 'POST',
             headers: {
@@ -49,17 +53,22 @@ async function handleTranslation() {
             body: JSON.stringify({ text, lang })
         });
 
+        // 🔍 Depuración: muestra el estado de la respuesta
+        console.log("Respuesta recibida:", response.status, response.ok);
+
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Error ${response.status}: ${errorText}`);
         }
 
         const data = await response.json();
+        console.log("Datos recibidos:", data); // 🔍 Depuración
+
         responseArea.textContent = data.text;
 
         // Reproducir audio si existe
         if (data.audio_base64) {
-            const audioUrl = `audio/mpeg;base64,${data.audio_base64}`;
+            const audioUrl = `data:audio/mpeg;base64,${data.audio_base64}`;
             audioPlayer.src = audioUrl;
             audioPlayer.style.display = 'block';
             audioPlayer.play().catch(e => console.warn("Audio play failed:", e));
@@ -120,7 +129,7 @@ function shareToLINE() {
     if (!text || text.includes('Por favor, escribe')) return;
 
     const shareText = encodeURIComponent(`Traducción: ${text}\n\nTraducido con Japan Assist – Asistente Japonés`);
-    const lineUrl = `https://line.me/R/msg/text/?${shareText}`;
+    const lineUrl = `https://line.me/R/msg/text/?${shareText}`; // ✅ Sin espacios
     window.open(lineUrl, '_blank');
 }
 
