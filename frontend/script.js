@@ -41,6 +41,50 @@ async function handleTranslation() {
     responseArea.textContent = '';
 
     try {
+        // 🔍 Depuración: muestra la solicitud en la consola (SIN ESPACIOS)
+        console.log("Enviando solicitud a:", 'https://japan-assist.onrender.com/chat');
+        console.log("Datos:", { text, lang });
+
+        const response = await fetch('https://japan-assist.onrender.com/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ text, lang })
+        });
+
+        // 🔍 Depuración: muestra el estado de la respuesta
+        console.log("Respuesta recibida:", response.status, response.ok);
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Error ${response.status}: ${errorText}`);
+        }
+
+        const data = await response.json();
+        console.log("Datos recibidos:", data); // 🔍 Depuración
+
+        responseArea.textContent = data.text;
+
+        // Reproducir audio si existe
+        if (data.audio_base64) {
+            const audioUrl = `data:audio/mpeg;base64,${data.audio_base64}`;
+            audioPlayer.src = audioUrl;
+            audioPlayer.style.display = 'block';
+            audioPlayer.play().catch(e => console.warn("Audio play failed:", e));
+        } else {
+            audioPlayer.style.display = 'none';
+        }
+    } catch (error) {
+        console.error("Error en la traducción:", error);
+        responseArea.textContent = 'Lo siento, no pude procesar tu solicitud. Inténtalo de nuevo.';
+        responseArea.style.color = '#ef4444';
+        audioPlayer.style.display = 'none';
+    }
+
+    loadingIndicator.style.display = 'none';
+    sendBtn.disabled = false;
+}
         // 🔍 Depuración: muestra la solicitud en la consola
         console.log("Enviando solicitud a:", 'https://japan-assist.onrender.com/chat');
         console.log("Datos:", { text, lang });
